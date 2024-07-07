@@ -21,5 +21,9 @@ C++ &amp; Cmake Project Template
 - sudo apt-get install curl zip unzip tar
 - sudo apt-get install graphviz
 
-
 # Run Command
+- make depency
+- make prepare
+
+# Credit
+- https://github.com/franneck94/CppProjectTemplate

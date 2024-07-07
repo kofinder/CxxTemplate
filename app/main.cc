@@ -1,6 +1,7 @@
 #include <iostream>
 #include "my_lib.h"
 #include "config.hpp"
+#include <nlohmann/json.hpp>
 
 int main() {
 
