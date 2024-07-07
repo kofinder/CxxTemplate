@@ -1,6 +1,6 @@
 
 # Executable files
-add_executable(Executable main.cc)
+add_executable(${EXECUTABLE_NAME} main.cc)
 
 # Linking Libs that you used
-target_link_libraries(Executable PUBLIC Library)
+target_link_libraries(${EXECUTABLE_NAME} PUBLIC ${LIBRARY_NAME})
