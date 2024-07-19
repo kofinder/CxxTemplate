@@ -1,7 +1,13 @@
-dependency:
+all: clean install develop execute
+
+clean:
+	rm -rf build/*
+
+install:
 	cd build && cmake .. --graphviz=graph.dot && dot -Tpng graph.dot -o graph.png 
 
-prepare:
-	rm -rf build
-	mkdir build
-	cd build
+develop:
+	cd build && cmake --build .
+
+execute:
+	cd build/app && ./Executable 
