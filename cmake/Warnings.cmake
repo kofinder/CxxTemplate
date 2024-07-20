@@ -15,7 +15,6 @@ function(target_set_warnings TARGET ENABLE ENABLED_AS_ERRORS)
 
     set(GCC_WARNINGS ${CLANG_WARNINGS})
 
-
     if(${ENABLED_AS_ERRORS})
         set(MSVC_WARNINGS ${MSVC_WARNINGS} /WX)
         set(CLANG_WARNINGS ${CLANG_WARNINGS} -Werror)

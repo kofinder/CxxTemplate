@@ -10,8 +10,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 option(ENABLE_TESTING "Enable a Unit Testing Build" ON)
-option(ENABLE_WARNINGS "Enable warnings as errors" ON)
-
+option(ENABLE_WARNINGS "Enable warnings" ON)
+option(ENABLE_WARNINGS_AS_ERRORS "Enable warnings as errors" ON)
 
 set(LIBRARY_NAME Library)
 set(EXECUTABLE_NAME Executable)
@@ -20,6 +20,10 @@ set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/")
 include(FetchContent)
 include(AddGitSubmodule)
 include(Docs)
+
+if(ENABLE_WARNINGS)
+    include(Warnings)
+endif()
 
 FetchContent_Declare(
     nlohmann_json
@@ -49,25 +53,31 @@ FetchContent_Declare(
     GIT_SHALLOW TRUE)
 FetchContent_MakeAvailable(cxxopts)
 
+FetchContent_Declare(
+    Catch2
+    GIT_REPOSITORY https://github.com/catchorg/Catch2
+    GIT_TAG v2.13.9
+    GIT_SHALLOW TRUE)
+FetchContent_MakeAvailable(Catch2)
 
-if(ENABLE_TESGING)
-    FetchContent_Declare(
-        Catch2
-        GIT_REPOSITORY https://github.com/catchorg/Catch2
-        GIT_TAG v3.5.3
-        GIT_SHALLOW TRUE)
-    FetchContent_MakeAvailable(Catch2)
-    list(APPEND CMAKE_MODULE_PATH ${catch2_SOURCE_DIR}/extras)
-endif()
+# if(ENABLE_TESGING)
+#     FetchContent_Declare(
+#         Catch2
+#         GIT_REPOSITORY https://github.com/catchorg/Catch2
+#         GIT_TAG v3.5.3
+#         GIT_SHALLOW TRUE)
+#     FetchContent_MakeAvailable(Catch2)
+#     list(APPEND CMAKE_MODULE_PATH ${catch2_SOURCE_DIR}/extras)
+# endif()
 
 # Defined cmake subdirectory
 add_subdirectory(configured)
 add_subdirectory(external)
 add_subdirectory(src)
 add_subdirectory(app)
-
-if(ENABLE_TESTING)
-    include(CTest)
-    enable_testing()
-    add_subdirectory(tests)
-endif()
+add_subdirectory(tests)
+# if(ENABLE_TESTING)
+#     include(CTest)
+#     enable_testing()
+#     add_subdirectory(tests)
+# endif()

@@ -5,6 +5,8 @@
 
 int main() {
 
+    int i;
+    
     std::cout << project_name << "\n";
     std::cout << project_version << "\n";
 
