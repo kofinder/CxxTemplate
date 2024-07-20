@@ -1,0 +1,27 @@
+{
+    "name": "cxxtemplate",
+    "version-string": "1.0.0",
+    "dependencies": [
+        {
+            "name": "cxxopts",
+            "version>=": "3.1.1"
+        },
+        {
+            "name": "fmt",
+            "version>=": "9.1.0"
+        },
+        {
+            "name": "nlohmann-json",
+            "version>=": "3.11.3"
+        },
+        {
+            "name": "spdlog",
+            "version>=": "1.13.0"
+        },
+        {
+            "name": "catch2",
+            "version>=": "3.5.2"
+        }
+    ],
+    "builtin-baseline": "821100d967e1737d96414a308e3f7cbe0d1abf18"
+}

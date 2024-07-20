@@ -5,7 +5,10 @@
 
 int main() {
 
-    int i;
+    // int i;
+
+    // int x[2];
+    // x[2] = 1234;
     
     std::cout << project_name << "\n";
     std::cout << project_version << "\n";

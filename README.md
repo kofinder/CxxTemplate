@@ -20,10 +20,16 @@ C++ &amp; Cmake Project Template
 - sudo apt-get install llvm clang-format clang-tidy
 - sudo apt-get install curl zip unzip tar
 - sudo apt-get install graphviz
+- pip install --user -U conan
 
 # Run Command
 - make depency
 - make prepare
+- make conan_debug
+- make conan_release
+
 
 # Credit
 - https://github.com/franneck94/CppProjectTemplate
+- conan profile detect
+
